@@ -21,6 +21,8 @@
 （3）利用红外发射头发射出去（参考：IRremoteESP8266/IRsendDemo）
 
 ![](img/2.jpg)
+（4）通过web发送http请求，控制空调开关
+![](img/3.png)
 
 5、注意事项：
 
