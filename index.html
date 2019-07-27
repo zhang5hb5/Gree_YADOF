@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>   
+    <head>   
+    </head>
+    <body>
+        <div class="raw">
+            <h1>112 open the door</h1>
+            <div class="raw">
+                <input type="button" class="on" value="ON" onclick="on()">
+            </div>     
+            <div class="raw">
+                <input type="button" class="off" value="OFF" onclick="off()">
+            </div>       
+        </div>
+    </body>
+</html>
+<style type="text/css">
+    .raw{
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    h1{
+        display: block;
+        color: darkslategray;
+        margin:2px auto;
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 80px ;
+    }
+    .on{
+        margin: 50px 35%;
+        width: 30%;
+        height: 100px;
+        color: black;
+        background: aqua;
+        border: 1;
+        font-size: 50px;
+    }
+    .off{
+        margin: 0 35%;
+        width:30%;
+        height: 100px;
+        color: black;
+        background: crimson;
+        border: 1;
+        font-size: 50px;
+
+    }
+    
+    @media only screen and  (max-width:480px){
+        h1{
+            font-size: 35px;
+            padding-bottom: 0;
+        }
+        .on,
+        .off{
+            height: 70px;
+            margin: 20px 30%;
+            width: 40%;
+            font-size: 25px;
+        }
+    }
+    
+</style>
+<script type="text/jscript">
+    function on()
+    {
+        var url = "http://210.42.110.119:6001/on";
+        var xmlhttp;
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function ()
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                document.getElementById("txtState").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("POST", url, true);
+        xmlhttp.send();
+    }
+    function off()
+    {
+        var url = "http://210.42.110.119:6001/off";
+        var xmlhttp;
+        if (window.XMLHttpRequest) 
+        {
+            xmlhttp = new XMLHttpRequest();
+        } 
+        else 
+        {
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function ()
+        {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+            {
+                document.getElementById("txtState").innerHTML = xmlhttp.responseText;
+            }
+        },
+        xmlhttp.open("POST", url, true);
+        xmlhttp.send();
+    }
+</script>
