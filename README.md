@@ -14,9 +14,13 @@
 
 （1）利用红外接收头接收遥控器编码，本例用接收的是格力空调YADOF型号遥控器编码（参考：IRremote/IRrecvDumpV2）
 
+![1](D:\桌面\arduino\Gree_YADOF\img\1.jpg)
+
 （2）记录NEC编码信息
 
 （3）利用红外发射头发射出去（参考：IRremoteESP8266/IRsendDemo）
+
+![2](D:\桌面\arduino\Gree_YADOF\img\2.jpg)
 
 5、注意事项：
 
